@@ -1,7 +1,10 @@
 # NetworkToolBox
-Python3 network toolbox
+##Python3 network toolbox
 
-ARP tools,
-TCP Proxy,
-Web hackery.
+##Usage 
+*git clone 
+pip3 install -r requirements.txt
+python3 menu.py
+*
 
+In progress ....
