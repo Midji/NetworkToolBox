@@ -10,6 +10,7 @@ class Ecoute (object):
 	def sniff(self):
 		self.paquet = sniff(iface=self.interface,filter=self.filtre,count=10)
 		self.paquet.display()
+		return
 		
 	def parametre(self):
 		print ("Interface d'ecoute :" ,self.interface)

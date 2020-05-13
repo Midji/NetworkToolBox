@@ -1,0 +1,2 @@
+scapy~=2.4.3
+dnspython~=1.16.0
