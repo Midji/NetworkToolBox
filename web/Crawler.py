@@ -12,13 +12,16 @@ class Crawl():
         return
 
     def link(self):
-        print("Enumeration des liens presents sur la page :\n\t")
-        self.reference = self.soup.find_all('a')
-        print (self.reference)
-        for self.lien in self.reference:
+        print("Enumeration des liens presents sur la page :")
+        for self.lien in self.soup.find_all('a'):
             print (self.lien.get('href')+" "+self.lien.string)
-            return
+        return
+    def form(self):
+        print("Enumeration des formulaires :")
+        for self.form in self.soup.find_all('form'):
+            print (self.form.string)
 
 site = Crawl()
 site.titre()
 site.link()
+site.form()
