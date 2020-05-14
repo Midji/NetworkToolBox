@@ -15,7 +15,21 @@ class Crawl():
         print("Enumeration des liens presents sur la page :")
         for self.lien in self.soup.find_all('a'):
             print (self.lien.get('href')+" "+self.lien.string)
+            self.linklink("http://"+self.url+self.lien.get('href'))
         return
+
+    def linklink(self,newpage=""):
+        if not newpage:
+            print ("vide")
+            return
+        else :
+            print("Nouvelle page a analyser: "+newpage)
+            self.new = urllib.request.urlopen(newpage)
+            self.newsoup = BeautifulSoup(self.new.read(),"lxml")
+            for self.newlien in self.newsoup.find_all('a'):
+                print(self.newlien.get('href'))
+        return
+
     def form(self):
         print("Enumeration des formulaires :")
         for self.form in self.soup.find_all('form'):
@@ -24,4 +38,4 @@ class Crawl():
 site = Crawl()
 site.titre()
 site.link()
-site.form()
+#site.form()
